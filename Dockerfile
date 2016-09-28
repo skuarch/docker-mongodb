@@ -2,6 +2,9 @@ FROM ubuntu:16.04
 
 ADD ./mongod.conf /tmp/
 
+ENV http_proxy 'http://1.1.1.1:0000/'
+ENV https_proxy 'http://1.1.1.1:0000/'
+
 # Install MongoDB.
 RUN \
   apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10 && \
